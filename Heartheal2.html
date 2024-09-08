@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <title>Meet Our Cardiologists - Heartheal.com</title>
+    <form action="#">
+    <style>
+        * {
+            font-family: 'Raleway';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: linear-gradient(to top, rgb(45, 9, 9), rgb(0, 0, 0));
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: whitesmoke;
+            padding-top: 80px; /* Adjust for the navbar */
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for navbar */
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 50px;
+            z-index: 1000;
+        }
+
+        .nav .link {
+            text-decoration: none;
+            color: whitesmoke;
+            margin-left: 20px;
+            font-size: 1.2em;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .nav .link:hover {
+            color: rgb(248, 152, 152); /* Hover color */
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .doctor {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for each doctor */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            position: relative;
+        }
+
+        .doctor h2 {
+            margin-top: 0;
+            font-size: 2em;
+            margin: 10px;
+            color: rgb(248, 152, 152); /* Heading color */
+        }
+
+        .doctor p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .appointment-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: rgb(250, 90, 90);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .appointment-btn:hover {
+            background-color: rgb(215, 172, 172);
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="Heartheal.html" class="link">Home</a>
+    <a href="Services.html" class="link">Services</a>
+    <a href="Appointments.html" class="link">Appointments</a>
+    <a href="AboutUs.html" class="link">About Us</a>
+    <a href="ContactUs.html" class="link">Contact Us</a>
+    <a href="FAQs.html" class="link">FAQ's</a>
+</div>
+
+<div class="container">
+    <h1>Meet Our Cardiologists</h1>
+    <br><br>
+
+    <div class="doctor">
+        <center><img src="Doctor1.png" alt="Doctor 1" style="width: 130px;">
+        <div>
+            <h2>Dr. Ridhi Sharma</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum urna sed lorem luctus, at lacinia magna ullamcorper.</p><br><br><br>
+        </div>
+        <button type="submit" class="appointment-btn">Make an Appointment</button> </center>
+    </div>
+
+    <div class="doctor">
+        <center><img src="Doctor2.png" alt="Doctor 2" style="width: 160px;">
+        <div>
+            <h2>Dr. Shirish</h2>
+            <p>Nullam congue felis et mi vehicula, a aliquet sem malesuada. Aliquam et nunc nec ipsum tempor convallis.</p><br><br><br>
+        </div>
+        <button type="submit" class="appointment-btn">Make an Appointment</button>
+    </div>
+
+    <div class="doctor">
+        <center><img src="Doctor3.png" alt="Doctor 3" style="width: 160px;">
+        <div>
+            <h2>Dr. Zoya Kapoor</h2>
+            <p>Vestibulum euismod dolor ut magna rutrum, vel ultrices velit dapibus. Etiam efficitur massa quis justo rhoncus.</p><br><br><br>
+        </div>
+        <button type="submit" class="appointment-btn">Make an Appointment</button>
+    </div>
+
+</div>
+</form>
+</body>
+</html>

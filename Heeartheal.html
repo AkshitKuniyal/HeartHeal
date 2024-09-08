@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <title>Welcome to Heartheal.com</title>
+    <style>
+        * {
+            font-family: 'Raleway';
+        }
+        body {
+            background-image: linear-gradient(to top, rgb(45, 9, 9), rgb(0, 0, 0));
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .welcome-screen {
+            text-align: center;
+            z-index: 2;
+            position: relative; /* Ensure it's relative for child positioning */
+        }
+
+        .animation-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background to blur the main content */
+            z-index: 1;
+            visibility: hidden; /* Initially hidden */
+        }
+
+        .animation-screen.show {
+            visibility: visible;
+        }
+
+        .about {
+            color: rgba(255, 255, 255, 0.69);
+            position: fixed; /* Fixed position to stay at bottom */
+            bottom: 20px; /* Adjust as needed */
+            left: 50%;
+            font-size: 1em;
+            transform: translateX(-50%);
+            height: auto;
+            width: 80%; /* Limit width for readability */
+            text-align: center; /* Center align text */
+            padding: 20px; /* Padding for readability */
+            border-radius: 8px; /* Rounded corners */
+            font-size: 1em;
+            animation: fade 2s  1;
+        }
+
+        .welcometext {
+            color: rgb(216, 216, 216);
+            font-size: 5em;
+            text-shadow: white 0px 0px 2px;
+            animation-name: fade;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+        .button {
+            padding: 10px;
+            border-radius: 3px;
+            background-color: rgb(250, 90, 90);
+            font-size: 1.5em;
+            box-shadow: rgb(0, 0, 0) 0px 2px 10px;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s, scale 0.3s, box-shadow 0.3s;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+                margin-top: -40px;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .button:hover {
+            background-color: rgb(215, 172, 172);
+            scale: 1.1;
+            box-shadow: rgba(255, 255, 255, 0.525) 0px 0px 10px;
+            cursor: pointer;
+        }
+
+        .heart {
+            width: 400px;
+            height: 600px;
+            opacity: 0;
+            animation: pounding infinite 1s;
+            position: relative; /* Ensure it's relative for child positioning */
+            z-index: 10; /* Ensure the heart is above other elements */
+        }
+
+        @keyframes pounding {
+            0% {
+                width: 400px;
+                height: 600px;
+                opacity: 0.9;
+            }
+            50% {
+                width: 430px;
+                height: 630px;
+                opacity: 1;
+            }
+            100% {
+                width: 400px;
+                height: 600px;
+                opacity: 0.9;
+            }
+        }
+
+        .heartbeatalive {
+            position: absolute;
+            top: 50%; /* Adjust as needed */
+            left: 50%; /* Adjust as needed */
+            transform: translate(-50%, -50%);
+            z-index: 5; /* Ensure it's behind the heart */
+            animation: line 5s infinite;
+        }
+        @keyframes line{
+            0%{
+                width: 79%;
+                opacity: 0.1;
+            }
+            50%{
+                width: 80%;
+                opacity: 0.3;
+            }
+            100%{
+                width: 79%;
+                opacity: 0.1;
+            }
+        } 
+            
+        
+
+        .nav {
+            position: fixed;
+            border: none;
+            top: 30px;
+            right: 100px;
+            display: flex;
+            height: auto;
+            width: auto;
+            margin-top: -20px;
+            animation-name: fade;
+            animation-duration: 1s;
+            color: whitesmoke;
+            padding: 20px;
+        }
+
+        .select {
+            margin-right: 80px;
+            border: none;
+            padding: 10px;
+            border-radius: 30px;
+            width: 100px;
+            transition: 0.5s;
+        }
+
+        .select:hover {
+            background-color: rgb(248, 152, 152);
+            color: black;
+            font-weight: bold;
+        }
+
+        .link {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        .Ref1{
+            color: rgba(255, 255, 255, 0.725);
+            position: fixed;
+            left: 10px;
+            width: 35%;
+            font-size: 5em;
+            margin-left: 30px;
+            animation: fade 2s  1;
+        }
+        .Ref2{
+            color: rgba(255, 255, 255, 0.725);
+            position: fixed;
+            right: 10px;
+            width: 35%;
+            top: 90px;
+            font-size: 6em;
+            margin-left: 30px;
+            animation: fade 2s  1;
+        }
+        .bar{
+            border: 2px solid rgba(255, 255, 255, 0.533);
+            position: fixed;
+            left: 8px;
+            
+            animation: fade 5s 1;
+            height: 150px;
+        }
+        .continue{
+            color: rgba(255, 255, 255, 0.666);
+position: fixed;
+right: 50px;
+font-size: 1em;
+background: transparent;
+            border: none;
+            cursor: pointer;
+transition: 0.2s;
+        }
+        .continue:hover{
+            scale: 1.5;
+        }
+        .page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white; /* Adjust background color as needed */
+    animation: slideLeft 0.5s forwards;
+    z-index: 1000; /* Ensure it's above other content */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+        
+        
+    </style>
+</head>
+<body>
+
+<audio id="heartbeatSound">
+    <source src="Heartbeat.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div class="welcome-screen">
+    <center>
+        <div class="nav">
+            <a href="" class="link"><div class="select">Home</div></a>
+            <a href="" class="link"><div class="select">Services</div></a>
+            <a href="" class="link"><div class="select">Appointments</div></a>
+            <a href="" class="link"><div class="select">About Us</div></a>
+            <a href="" class="link"><div class="select">Contact Us</div></a>
+            <a href="" class="link"><div class="select">FAQ's</div></a>
+        </div>
+    </center>
+    <h1 class="welcometext">Welcome to Heartheal.com</h1>
+    <button id="startAnalysisBtn" class="button">Start Analysis</button>
+    <p class="about">Welcome to Heartheal.com. We specialize in providing personalized care and comprehensive treatment options for cardiovascular health. Whether you're looking for preventive care, managing a heart condition, or seeking specialized treatment, our dedicated team is here to support you. Explore our services and resources to discover how we can help you achieve and maintain a healthy heart.</p>
+</div>
+
+<div class="animation-screen" id="animationScreen">
+    <div class="bar"></div>
+    <h1 class="Ref1">HEARTHEAL </h1>
+    <h1 class="Ref2" style="top: 250px; font-size: 5em; ">Every </h1>
+    <h1 class="Ref2"style="top: 350px;font-size: 5em;">Beat </h1>
+    <h1 class="Ref2"style="top: 450px;font-size: 5em;">Matters. </h1>
+    <form action="Heartheal2.html" id="form">
+        <button type="submit" class="continue">Continue >>></button>
+    </form>
+    <img src="../Heartheal/Heartbeatalive.png" alt="" class="heartbeatalive">
+    <img src="../Heartheal/human-heart-41.png" alt="" class="heart">
+</div>
+
+<script>
+    document.getElementById('startAnalysisBtn').addEventListener('click', function() {
+        // Play heartbeat sound
+        var heartbeatSound = document.getElementById('heartbeatSound');
+        heartbeatSound.play();
+
+        // Hide welcome screen
+        document.querySelector('.welcome-screen').style.display = 'none';
+        // Show animation screen
+        document.getElementById('animationScreen').classList.add('show');
+    });
+
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.body.classList.add('page-transition');
+        setTimeout(function() {
+            window.location.href = "Heartheal2.html";
+        }, 500); // Adjust the timeout to match the duration of your animation (0.5s in this case)
+    });
+</script>
+
+</body>
+</html>
